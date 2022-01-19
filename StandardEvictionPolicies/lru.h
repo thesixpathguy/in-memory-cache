@@ -45,7 +45,7 @@ public:
     {
         Node<Key> *nodeToEvict = keys->getNodeFirst();
         Key garbage;
-        if (start == NULL)
+        if (nodeToEvict == NULL)
         {
             return {garbage, false}; // no key to evict
         }

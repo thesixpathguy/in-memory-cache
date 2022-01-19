@@ -48,7 +48,6 @@ void Cache<Key, Value>::put(Key key, Value value)
 {
     if (this->storage->isFull()) //storage full: perform eviction
     {
-        // this->storage->print();
         cout << "Storage is full. Eviction initiated.\n";
         pair<Key, bool> keyToDelete = this->evictionPolicy->evict(); // eviction
         if (keyToDelete.second == false)
@@ -71,7 +70,6 @@ void Cache<Key, Value>::put(Key key, Value value)
         this->storage->add(key, value);
         this->evictionPolicy->keyAccess(key);
     }
-    // this->storage->print();
 }
 
 // get method
